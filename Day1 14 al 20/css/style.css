@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Slab', Times, serif;
+    font-size: 12px;
+    display: grid;
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+    place-items: center;
+}
+
+
+.contenedor {
+    width: 400px;
+    height: 400px;
+    background: rgb(69, 80, 166);
+    background: linear-gradient(36deg, rgba(69, 80, 166, 1) 0%, rgba(72, 120, 178, 1) 41%, rgba(77, 183, 197, 1) 91%, rgba(77, 184, 198, 1) 100%);
+    border-radius: 10px;
+    position: relative;
+    /*  border: solid 1px blue; */
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contenedor--1 {
+    position: relative;
+    /*  border: solid 1px black; */
+    width: 70%;
+    height: 33%;
+}
+
+.contenedor--1__num--left--after {
+    background-color: rgb(229, 233, 243);
+    width: 30px;
+    height: 45%;
+    top: 0px;
+    left: 2px;
+    transform: rotate(50deg);
+    border-radius: 5px;
+    z-index: 0;
+    position: absolute;
+}
+
+.contenedor--1__num--left {
+    background-color: #FBFCFE;
+    width: 30px;
+    height: 100%;
+    top: 0;
+    left: 26px;
+    border-radius: 5px;
+    box-shadow: 10px 0 20px rgb(0, 0, 0, 0.12);
+    z-index: 5;
+    position: absolute;
+}
+
+.contenedor--1__num--center {
+    background-color: transparent;
+    width: 46%;
+    height: 100%;
+    top: 0px;
+    left: 44px;
+    border-radius: 50%;
+    border: solid 30px #FBFCFE;
+    box-shadow: 10px 0 20px rgb(0, 0, 0, 0.12);
+    z-index: 3;
+    position: absolute;
+}
+
+.contenedor--1__num--right {
+    background-color: transparent;
+    width: 46%;
+    height: 100%;
+    top: 0px;
+    left: 152px;
+    border-radius: 50%;
+    border: solid 30px #FBFCFE;
+    z-index: 2;
+    position: absolute;
+}
+
+.contenedor--2__ch {
+    color: #FBFCFE;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 60px;
+    margin-top: 10px;
+}
+
+.contenedor--2__day {
+    color: #FBFCFE;
+    text-align: center;
+    font-size: 25px;
+}
+

@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:   black;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+input[type=checkbox] {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    appearance: none;
+    z-index: 10;
+}
+
+.contenedor {
+    width: 180px;
+    height: 180px;
+    border: solid 5px;
+    position: relative;
+}
+
+.stripe {
+    width: 100%;
+    height: 24px;
+    background: rgb(255, 0, 17) ;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.stripe-2 {
+    top: 76px;
+}
+
+.stripe-3 {
+    bottom: 0;;
+}
+
+input:checked ~ .stripe-1  {
+    animation-name: nearby;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+
+input:checked ~ .stripe-2  {
+    animation-name: disappear;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+
+input:checked ~ .stripe-3  {
+    animation-name: nearby-2;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+
+/*Nota cuando un elemento se le aplica un animacion este estado solo
+    durar hasta el final de animacion y por defecto el objeto volvera a donde 
+    estaba antes de la animacion esto lo podemos cambiar con la propiedad
+    - animation-fill-mode: none; El elemento vuelve a su estado inicial
+    antes de que comience la animación y después de que termine.
+    otros valores: 
+    - forwards: Después de que la animación termine, el elemento retiene los estilos
+    aplicados en el último fotograma de la animación.
+    - backwards: Antes de que comience la animación, el elemento toma los estilos aplicados en el primer fotograma de la animación. Esto es útil
+    para animaciones que tienen un retraso (animation-delay).
+    - both:  El elemento retiene los estilos del primer fotograma 
+    antes de que comience la animación y los estilos del último 
+    fotograma después de que la animación termine.
+  */
+
+@keyframes disappear {
+    0% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes nearby {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(76px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(76px) rotate(45deg);
+    }
+}
+
+@keyframes nearby-2 {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-76px) rotate(0);
+    }
+    100% {
+        transform: translatey(-76px) rotate(-226deg);
+    }
+}
+
+
+input:not(:checked) ~ .stripe-1  {
+    animation-name: away;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+
+input:not(:checked) ~ .stripe-2  {
+    animation-name: not-disappear;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+
+input:not(:checked) ~ .stripe-3  {
+    animation-name: away-2;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes not-disappear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes away {
+    0% {
+        transform: translateY(76px) rotate(45deg);
+    }
+    50% {
+        transform: translateY(76px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+@keyframes away-2 {
+    0% {
+        transform: translatey(-76px) rotate(-226deg);
+    }
+    50% {
+        transform: translateY(-76px) rotate(0);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
